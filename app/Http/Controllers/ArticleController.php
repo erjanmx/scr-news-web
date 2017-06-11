@@ -14,7 +14,7 @@ class ArticleController extends Controller
 
         $articles = Article::where('is_active', 1);
 
-		if ($q) {
+	if ($q) {
             $articles = $articles->where('title', 'like', '%' . $q . '%');
         }
         if ($lt) {
@@ -34,7 +34,7 @@ class ArticleController extends Controller
                 'timestamp' => strtotime($article->created_at),
             ];
         }
-	    usleep(500);
+
         return $result;
     }
 
